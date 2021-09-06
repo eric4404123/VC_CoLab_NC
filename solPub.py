@@ -57,7 +57,7 @@ class Solver(object):
         self.SpeakerClassifier.eval()
         self.PatchDiscriminator.eval()
 
-    def test_step(self, x, c, gen=False):
+    def test_step(self, x, c, gen=True):
         self.set_eval()
         x = to_var(x).permute(0, 2, 1)
         enc = self.Encoder(x)
